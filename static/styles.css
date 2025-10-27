@@ -1,0 +1,158 @@
+/*blog.html*/
+body {
+    font-family: "Georgia", sans-serif;
+    background: #d1d1fc;
+    color: #333
+    line-height: 1.6;
+}
+.blog{
+    margin:auto;
+    max-width: 800;
+}
+.card{
+    padding: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+}
+
+h1{
+    font-size: 100px;
+    font-weight: 300;
+    color: #050505;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #011e91;
+    line-height: 1;
+}
+h6{
+    font-family: "roboto", sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    color: #a1a1a1;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+.author {
+    color: gray;
+    text-align: right;
+}
+.likes{
+    font-family: "Robotto", sans-serif;
+    color: black;
+    font-size: 10px;
+    font-weight: 100;
+}
+
+.add {
+    --border_radius: 10px;
+    --color: #2196f3;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    padding: 6px 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button.white{
+    font-family: "Georgia", sans-serif;
+    font-size: 20px;
+    color: white;
+}
+button {
+    background-color: var(--color);
+    border-radius: var(--border_radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+.register {
+    --border_radius: 10px;
+    --color: #2196f3;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    padding: 0;
+}
+.login {
+    --border_radius: 10px;
+    --color: #2196f3;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    padding: 0;
+}
+.logout {
+    --border_radius: 10px;
+    --color: #2196f3;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    padding: 0;
+}
+.delete {
+    --border_radius: 10px;
+    --color: #2196f3;
+    padding: 0px 0px;
+}
+.create {
+    --border_radius: 10px;
+    --color: #2196f3;
+    color: white;
+}
+.like_panel {
+    position: relative;
+    left: 93%;
+    background: #ff9898;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+
+/*add_post.html*/
+.center{
+    font-family: "roboto", sans-serif;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    transform: translate(-5%, -40%);
+    min-width: 500px;
+}
+b {
+    color: #240d8c;
+    font-size: 50px;
+    padding: 20px;
+}
+form {
+    --border_radius: 10px;
+    --color: #2196f3;
+    background-color: var(--color);
+    padding: 30px;
+    border-radius: var(--border_radius);
+    max-width: 800px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/*blog.html*/
+.post {
+    max-width:800px;
+    margin:auto;
+    margin-top: 40px;
+    background-color: #f0f0f0;
+    padding: 1px 30px 30px 30px;
+    border-radius: 10px;
+}

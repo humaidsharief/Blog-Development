@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <h1>My Blog</h1>
+
+    {% if current_user.is_authenticated %}
+        <form class="add" action="http://127.0.0.1:5000/add/">
+            <button type="submit" class="white">Add Post</button>
+        </form>
+        <form class="logout" action="http://127.0.0.1:5000/logout/">
+        <button
+                type="submit"
+                class="white"
+                style="font-size: 12px;"
+        >
+            Logout
+        </button>
+    </form>
+    {% endif %}
+    {% if not current_user.is_authenticated %}
+        <form class="register" action="http://127.0.0.1:5000/register/">
+            <button
+                    type="submit"
+                    class="white"
+                    style="font-size: 12px;"
+            >
+                Register
+            </button>
+        </form>
+        <form class="login" action="http://127.0.0.1:5000/login/">
+        <button
+                type="submit"
+                class="white"
+                style="font-size: 12px;"
+        >
+            Login
+        </button>
+    </form>
+    {% endif %}
+
+    <div class="blog">
+        {% for post in posts %}
+            <div class="card">
+                <h2><a href="{{ url_for ('post', post_id=post.id)}}">
+                    {{post.title}} </a></h2>
+                <h6 style="font-size: 12px;">{{post.time}}</h6>
+                <p> {{post.content}} </p>
+                <p class="author">~ {{post.username}}</p>
+                {% if current_user.is_authenticated %}
+                    <button
+                            class="like_panel"
+                            onclick="location.href='{{ url_for('like_post',
+                                    post_id=post.id) }}'"
+
+                    >
+                        {% if post.id in post.liked_posts %}
+                            <img src="/static/like.png" width="25">
+                        {% else %}
+                            <img src="/static/no_like.png" width="25">
+                        {% endif %}
+                        <span class="likes">{{post.likes}}</span>
+                    </button>
+                {% endif %}
+
+                {% if current_user.id == post.author_id %}
+                    <form class="delete"
+                            method="POST"
+                            action="{{ url_for('delete_post', post_id=post.id) }}"
+                            style="max-width: 75px;"
+                    >
+                        <button
+                                    type="submit"
+                                    class="white"
+                                    style="font-size: 12px; background-color: #f32121;"
+                        >
+                            Delete
+                        </button>
+                    </form>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
